@@ -6,7 +6,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,8 +28,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
-  List<String> _locations = ['A', 'B', 'C', 'D']; // Option 2
-  String _selectedLocation; // Option 2
+  List<String> locations = ['Hindu', 'TOI', 'India today', 'Dhinathanthi']; 
+  String selectedLocation; 
+  String selected2;
 
   @override
   Widget build(BuildContext context) {
@@ -42,16 +42,11 @@ class MyHomePageState extends State<MyHomePage> {
             //height: 500.0,
             width: 400.0,
             padding: EdgeInsets.all(10.0),
-            color: Color(0xFF9CD8F9),
+            //color: Color(0xFF9CD8F9),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text.rich(TextSpan(
-                  text: 'hi',
-                  style: TextStyle(
-                      fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
-                )),
-                MyLink(),
+                MyLink('Click here to access Hindu'),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   decoration: BoxDecoration(
@@ -61,18 +56,18 @@ class MyHomePageState extends State<MyHomePage> {
                         style: BorderStyle.solid,
                         width: 0.80),
                   ),
-                  child: DropdownButton(
+                  child:DropdownButton(
                     hint: Text(
-                        'Please choose a location'), // Not necessary for Option 1
-                    value: _selectedLocation,
+                        'Please choose an option'), // Not necessary for Option 1
+                    value: selectedLocation,
                     icon: Icon(Icons.keyboard_arrow_down),
                     style: TextStyle(color: Colors.deepPurple),
                     onChanged: (newValue) {
                       setState(() {
-                        _selectedLocation = newValue;
+                        selectedLocation = newValue;
                       });
                     },
-                    items: _locations.map((location) {
+                    items: locations.map((location) {
                       return DropdownMenuItem(
                         child: Text(location),
                         value: location,
@@ -93,18 +88,18 @@ class MyHomePageState extends State<MyHomePage> {
                         
                           child: DropdownButton(
                             hint: Text(
-                                'Select'), // Not necessary for Option 1
-                            value: _selectedLocation,
+                                'Select an option'), 
+                            value: selected2,
                             icon: Icon(Icons.keyboard_arrow_down),
                             style: TextStyle(color: Colors.deepPurple),
                             onChanged: (newValue) {
                               setState(() {
-                                _selectedLocation = newValue;
+                                selected2 = newValue;
                               });
                             },
-                            items: _locations.map((location) {
+                            items: locations.map((location) {
                               return DropdownMenuItem(                                
-                                child: MyLink(),
+                                child: MyLink(location),
                                 value: location,
                               );
                             }).toList(),
@@ -120,21 +115,23 @@ class MyHomePageState extends State<MyHomePage> {
 }
 
 class MyLink extends StatelessWidget {
+  MyLink(this.val);
+  final String val;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: launchURL,
         child: Container(
           padding: EdgeInsets.all(5.0),
-          color: Colors.yellow,
+          //color: Colors.yellow,
           child: Text(
-            'Hell World',
+            val,
           ),
         ));
   }
 
   launchURL() async {
-    const url = 'https://flutter.dev/';
+    const url = 'https://www.thehindu.com/';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -142,3 +139,4 @@ class MyLink extends StatelessWidget {
     }
   }
 }
+
