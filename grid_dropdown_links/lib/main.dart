@@ -28,9 +28,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
+
   List<String> locations = ['Hindu', 'TOI', 'India today', 'Dhinathanthi']; 
   String selectedLocation; 
   String selected2;
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,9 @@ class MyHomePageState extends State<MyHomePage> {
                   ),
                   child:DropdownButton(
                     hint: Text(
+
                         'Please choose an option'), // Not necessary for Option 1
+
                     value: selectedLocation,
                     icon: Icon(Icons.keyboard_arrow_down),
                     style: TextStyle(color: Colors.deepPurple),
@@ -88,13 +92,17 @@ class MyHomePageState extends State<MyHomePage> {
                         
                           child: DropdownButton(
                             hint: Text(
+
                                 'Select an option'), 
                             value: selected2,
+
                             icon: Icon(Icons.keyboard_arrow_down),
                             style: TextStyle(color: Colors.deepPurple),
                             onChanged: (newValue) {
                               setState(() {
+
                                 selected2 = newValue;
+
                               });
                             },
                             items: locations.map((location) {
