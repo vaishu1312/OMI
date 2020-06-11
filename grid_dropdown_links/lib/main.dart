@@ -6,7 +6,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,8 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
-  List<String> _locations = ['A', 'B', 'C', 'D']; // Option 2
-  String _selectedLocation; // Option 2
+  List<String> locations = ['A', 'B', 'C', 'D']; 
+  String selectedLocation; 
 
   @override
   Widget build(BuildContext context) {
@@ -64,15 +63,15 @@ class MyHomePageState extends State<MyHomePage> {
                   child: DropdownButton(
                     hint: Text(
                         'Please choose a location'), // Not necessary for Option 1
-                    value: _selectedLocation,
+                    value: selectedLocation,
                     icon: Icon(Icons.keyboard_arrow_down),
                     style: TextStyle(color: Colors.deepPurple),
                     onChanged: (newValue) {
                       setState(() {
-                        _selectedLocation = newValue;
+                        selectedLocation = newValue;
                       });
                     },
-                    items: _locations.map((location) {
+                    items: locations.map((location) {
                       return DropdownMenuItem(
                         child: Text(location),
                         value: location,
@@ -93,16 +92,16 @@ class MyHomePageState extends State<MyHomePage> {
                         
                           child: DropdownButton(
                             hint: Text(
-                                'Select'), // Not necessary for Option 1
-                            value: _selectedLocation,
+                                'Select'), 
+                            value: selectedLocation,
                             icon: Icon(Icons.keyboard_arrow_down),
                             style: TextStyle(color: Colors.deepPurple),
                             onChanged: (newValue) {
                               setState(() {
-                                _selectedLocation = newValue;
+                                selectedLocation = newValue;
                               });
                             },
-                            items: _locations.map((location) {
+                            items: locations.map((location) {
                               return DropdownMenuItem(                                
                                 child: MyLink(),
                                 value: location,
