@@ -30,8 +30,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String serverGetResponse = 'Server get response';
-  String serverPostResponse = 'Server post response';
+  String serverGetResponse = '';
+  String serverPostResponse = '';
   final getController = TextEditingController();
   final postController = TextEditingController();
 
@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             padding: EdgeInsets.symmetric(horizontal: 10.0),
                             child: SizedBox(
-                                width: 200,
+                                width: 300,
                                 child: TextField(
                                   decoration: InputDecoration(
                                       border: InputBorder.none,
@@ -176,16 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   String _localhost() {
-    return 'http://localhost:8081/';
-    /*if(Platform.isWindows)
-      return 'http://127.0.0.1:8081';
-    else if (Platform.isMacOS)
-      return 'http://localhost:8081';
-    else if (Platform.isAndroid)
-      return 'http://10.0.2.2:8081';
-    else if(Platform.isIOS)
-      return 'http://localhost:8081';
-    else 
-      return null;*/
+    return "https://task3-v4.azurewebsites.net/";
+    //return 'http://localhost:8081/';
   }
 }

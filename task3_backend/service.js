@@ -13,9 +13,9 @@ exports.get = function (request, response) {
     response.setHeader('Access-Control-Allow-Credentials', 'true');
     */
     var res = { "text": "Hello " + name + " !!" };
-    response.end(res.text);
+   //    response.end(res.text);
     //response.end(JSON.stringify(res));
-    //response.end("Hello World!!");
+    response.end("Hello World!!");
 }
 
 exports.post = function (request, response) {

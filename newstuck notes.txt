@@ -1,0 +1,16 @@
+Insert into newstuck2.ArticleDimensions (DimensionName) values ('Competency'),('TrustWorthiness'),('FactVsOpinion');
+
+Insert into newstuck2.FeedTag (TagName) values ('Economy'),('Finance'),('Education'),('Entertainment'),('Politics'),('Technology');
+
+ var AdminRoleId = "10a6ab6a-738d-4311-8c98-c1d911e7a2e7";
+            var EditorRoleId = "10a6ab6a-738d-4311-8c98-c1d911e7a2e8";
+            var SubEditorRoleId = "10a6ab6a-738d-4311-8c98-c1d911e7a2e9";
+
+
+onemindindia/newstuckhostedservicecrawler:latest
+environment:
+      - Secret=1234567890 a very long word
+      - ApplicationInsightsKey=5fcb598f-1e4d-43d7-ab3f-70b5700ab570
+      - DefaultConnection=Server=db;Port=3306;User Id=user;Password=tWXg5p8FK6JpvICDcYQ%fppxbJa;Database=newstuck
+      - CrawlerTimerMinutes=20
+      - FeedCategoryTimerMinutes=15

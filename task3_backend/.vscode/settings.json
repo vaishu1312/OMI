@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/0807ab06-8309-455f-a04d-0a1ab5011e1f/resourceGroups/Task3/providers/Microsoft.Web/sites/BasicApi3",
+    "appService.deploySubpath": "."
+}
